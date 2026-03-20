@@ -56,3 +56,4 @@ document.getElementById("formCadastro").addEventListener("submit", function(e) {
         alert("Preencha todos os campos!");
     }
 });
+
