@@ -34,3 +34,25 @@ cepInput.addEventListener("blur", function () {
       alert("Erro ao buscar CEP");
     });
 });
+
+// CADASTRO OK ELE IRA MUDAR DE PÁGINA
+document.getElementById("formCadastro").addEventListener("submit", function(e) {
+    e.preventDefault(); // impedindo o envio padrão do forms
+
+    let inputs = document.querySelectorAll("#formCadastro input"); //seleciona o input do formulário
+    let tudoPreenchido = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") { // se o input for vazio ele retorna falso
+            tudoPreenchido = false;
+        }
+    });
+
+    if (tudoPreenchido) {
+        // se for verdade ele muda de página
+        alert("Login realizado!");
+        window.location.href = "index.html"; 
+    } else {
+        alert("Preencha todos os campos!");
+    }
+});

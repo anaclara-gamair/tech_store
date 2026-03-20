@@ -80,3 +80,9 @@ input[readonly] {
     display: block;
     margin: 0 auto; 
 }
+
+.frmi { 
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /*Para colocar espaço entre os itens*/
+}
