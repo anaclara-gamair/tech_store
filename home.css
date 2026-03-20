@@ -1,0 +1,249 @@
+/* ================= HEADER AMARELO ================= */
+.headeramarelo {
+  color: #2f6f73;
+  background: linear-gradient(135deg, #d4f8e8, #fce1e4, #fff3b0);
+  font-size: 15px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 0;
+  margin: 0;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.headeramarelo p {
+  margin: 0;
+}
+
+/* ================= HEADER ================= */
+.header-pet {
+  background: linear-gradient ( #d4f8e8, white, #d4f8e8, #d4f8e8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 30px; 
+  width: 100%;
+  z-index: 1000;
+  background: white;
+}
+
+/* ================= LOGO ================= */
+.logo-centro {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.logo-central-img {
+  height: 100px;
+}
+
+/* ================= SEARCH ================= */
+.search-bar {
+  width: 280px;
+  height: 38px;
+  border-radius: 50px;
+  border: 1px solid #b2f0e6;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  border: 3px solid #b2f0e6;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(178, 240, 230, 0.5);
+
+}
+
+/* ================= TÍTULO ================= */
+.headertexto2 {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #2f6f73;
+  font-size: 30px;
+  font-weight: 700;
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 30px;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(252, 161, 185, 0.2);
+}
+
+/* ================= BOTÃO COMPRAR ================= */
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #4fd1c5, #81e6d9);
+  border: none;
+  border-radius: 50px;
+  height: 45px;
+  width: 120px;
+  font-size: 15px;
+
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #38b2ac, #5eead4);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* ================= CARRINHO ICON ================= */
+.cart-icon {
+  background: none;
+  border: none;
+  font-size: 22px;
+  position: relative;
+  cursor: pointer;
+  color: #2f6f73;
+  transition: 0.3s;
+}
+
+.cart-icon:hover {
+  background: #fce1e4;
+  border-radius: 50%;
+  transform: scale(1.1);
+}
+
+/* contador */
+#contador {
+  font-size: 12px;
+  background: #fca3b9;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* ================= NAV ================= */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2f6f73;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #fca3b9;
+}
+
+/* ================= OVERLAY ================= */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+#overlay.ativo {
+  display: block;
+}
+
+/* ================= CARRINHO LATERAL ================= */
+#carrinho-lateral {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+
+  background: #ffffff;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+  transition: right 0.3s ease;
+
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#carrinho-lateral.ativo {
+  right: 0;
+}
+
+/* ================= HEADER DO CARRINHO ================= */
+.carrinho-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fce1e4;
+  padding-bottom: 10px;
+  color: #2f6f73;
+}
+
+/* ================= LISTA ================= */
+#lista-carrinho {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 15px;
+}
+
+/* ================= ITEM ================= */
+.item-carrinho {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.item-carrinho p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.item-carrinho strong {
+  color: #2f6f73;
+}
+
+/* ================= FOOTER ================= */
+.carrinho-footer {
+  border-top: 2px solid #fce1e4;
+  padding-top: 10px;
+  margin-top: 10px;
+  color: #2f6f73;
+}
+
+/* ================= BOTÃO FECHAR ================= */
+#fechar-carrinho {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fca3b9;
+}
+
+/* ================= FUNDO GERAL ================= */
+body {
+  background: linear-gradient(135deg, #d4f8e8, white, white, #d4f8e8);
+  padding-top: 160px;
+}
