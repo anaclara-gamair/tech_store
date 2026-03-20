@@ -221,3 +221,26 @@ label {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
     z-index: 10;
 }
+/* =========================================
+   CONFETES (ANIMAÇÃO)
+   ========================================= */
+.confete {
+    position: fixed;
+    top: -10px; /* Começa um pouco acima da tela */
+    width: 10px;
+    height: 10px;
+    z-index: 2000; /* Fica acima do modal */
+    border-radius: 2px;
+    animation: cair forwards; /* A duração será definida no JS */
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg); /* Cai até o fim da tela girando */
+        opacity: 0;
+    }
+}
