@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>TECH STORE LOGIN</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <title>Document</title>
 </head>
-<body class="bg-login">
-    <div class="container form-container"">
-        <h1>Dados do cliente</h1>
-        <form class="frmi" id="formCadastro">
-            <input type="text" id="nome" placeholder="Nome completo" required>
-            <input type="text" id="cep" placeholder="CEP (somente numeros)" maxlength="8" required>
-            <input type="text" id="logradouro" placeholder="Logadouro" required>
-            <input type="text" id="bairro" placeholder="bairro" required>
-            <input type="text" id="cidade" placeholder="Cidade" required>
-            <input type="text" id="estado" placeholder="Estado" required>
-            <input type="text" id="user" placeholder="user" required>
-            <input type="text" id="senha" placeholder="senha" required>
+<body>
+    <!--
+    ============================================================================
+                                    HEADER PEQUENO GRADIENTE
+    ==========================================================================
+    -->
+    <div class="headeramarelo">
+        <p>Aproveite as promoções da semana do consumidor!</p>
+      </div>
+  
+      <!--
+      ============================================================================
+                                      HEADER GRANDE INICIAL
+      ==========================================================================
+      -->
+     <header class="p-3 header-pet">
+  <div class="container position-relative">
 
-            <button type="submit" class="btn-primary">Cadastrar</button>
-        </form>
-        
+    <!-- LINHA DE CIMA -->
+    <div class="d-flex justify-content-end mb-4">
+      <div class="d-flex align-items-center gap-3">
+
+        <input type="search" class="form-control search-bar" placeholder="Search...">
+
+        <!-- CARRINHO -->
+        <button class="cart-icon" id="abrir-carrinho">
+          <i class="bi bi-cart3"></i>
+          <span id="contador">0</span>
+        </button>
+
+      </div>
     </div>
-
 
     <!-- LOGO CENTRAL -->
     <div class="logo-centro text-center">
@@ -59,7 +78,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="about.html">
+        <a class="nav-link" href="javascript:void(0)">
           <i class="bi bi-info-circle-fill"></i> About
         </a>
       </li>
@@ -322,8 +341,10 @@
         <button onclick="Pg_open()" class="btn-primary">Pagar</button>
 
     </div>
-    <script src="carrinho.js"></script>
-    <script src="script.js"></script>
 
+    
+    <script src="carrinho.js">
+      
+    </script>
 </body>
-</html>
+

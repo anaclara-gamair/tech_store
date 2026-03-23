@@ -51,7 +51,7 @@ document.getElementById("formCadastro").addEventListener("submit", function(e) {
     if (tudoPreenchido) {
         // se for verdade ele muda de página
         alert("Login realizado!");
-        window.location.href = "index.html"; 
+        window.location.href = "home.html"; 
     } else {
         alert("Preencha todos os campos!");
     }
