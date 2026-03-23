@@ -1,43 +1,81 @@
 const selectEnvio = document.getElementById('opcoes-envio');
 const spanSubtotal = document.getElementById('valor-subtotal');
 const spanTotal = document.getElementById('valor-total');
+let metodoEscolhido = null; 
 
-const valorSubtotal = parseFloat(spanSubtotal.getAttribute('data-valor')) || localStorage.getItem('td') ;
+selectEnvio.addEventListener('change', calcularValores);
 
-selectEnvio.addEventListener('change', function() {
-    const valorFrete = parseFloat(this.value);
-    const valorTotal = Number(valorSubtotal) + valorFrete;
-    spanTotal.innerText = valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-});
+function calcularValores() {
+ 
+    const valorSubtotal = parseFloat(spanSubtotal.getAttribute('data-valor')) || parseFloat(localStorage.getItem('td')) || 0;
+    const valorFrete = parseFloat(selectEnvio.value) || 0;
+    
+   
+    let totalBruto = valorSubtotal + valorFrete;
+    const areaParcelas = document.getElementById('area-parcelas');
+    const infoParcela = document.getElementById('info-parcela');
+
+
+    if (!metodoEscolhido) {
+        spanTotal.innerText = totalBruto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        return;
+    }
+
+    if (metodoEscolhido === "Pix" || metodoEscolhido === "Dinheiro") {
+        areaParcelas.style.display = "none"; 
+        
+        let totalComDesconto = totalBruto * 0.95; 
+        spanTotal.innerText = totalComDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + " (5% OFF)";
+        
+    } else if (metodoEscolhido === "Cartão") {
+        areaParcelas.style.display = "block"; 
+        
+       
+        spanTotal.innerText = totalBruto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        
+    
+        let qtdParcelas = parseInt(document.getElementById('qtd-parcelas').value) || 1;
+        let valorDaParcela = totalBruto / qtdParcelas;
+        
+        infoParcela.innerText = `${qtdParcelas}x de ${valorDaParcela.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
+    }
+}
 
 function set_medodo_pagamento(idClicado) {
-    let botoes = document.querySelectorAll('.check_button')
-    let button = document.getElementById(idClicado)
-
-    botoes.forEach(btn => {
-        btn.setAttribute("value", "#8fd694")
-        btn.style.background = "#8fd694"          
-    })
-
-    if (selectEnvio.value === "0") {
+  
+    if (selectEnvio.value === "0" || !selectEnvio.value) {
         alert("Por favor, selecione uma forma de envio antes de pagar!");
         return;
     }
 
-    button.value = (button.getAttribute("value") == "#8fd694") ? "#ffb7c5" : "#8fd694"
-    button.setAttribute("value", button.value)
-
-    button.style.background = button.value
+    metodoEscolhido = idClicado;
     document.getElementById('metodo-escolhido').innerText = idClicado;
+
+   
+    let botoes = document.querySelectorAll('.check_button');
+    botoes.forEach(btn => {
+        btn.style.background = "#8fd694";
+        btn.style.color = "#fff";
+    });
+
+ 
+    let button = document.getElementById(idClicado);
+    button.style.background = "#ffb7c5";
+    button.style.color = "#4a7c59"; 
+
+    calcularValores();
 }
 
 function fecharModal() {
     const modal = document.getElementById('modal-sucesso');
     modal.classList.remove('ativo');
+
+    window.location.href = "home.html"; 
+    
 }
 
 function finalizar_compra(){
-    // Verifica se algum método foi escolhido antes de abrir o modal
+  
     const metodo = document.getElementById('metodo-escolhido').innerText;
     if (!metodo) {
         alert("Selecione um método de pagamento antes de finalizar!");
@@ -47,8 +85,9 @@ function finalizar_compra(){
     const modal = document.getElementById('modal-sucesso');
     modal.classList.add('ativo');
 
-    // Dispara a animação dos confetes
+  
     jogarConfetes();
+    
 }
 
 // Lógica para criar os confetes na tela

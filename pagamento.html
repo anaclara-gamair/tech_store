@@ -19,7 +19,7 @@
 <body>
     <main class="container">
         <header class="cabecalho-empresa">
-            <h2>Nome da Empresa</h2>
+            <h2>Tech store</h2>
             <p>Resumo do Pedido</p>
         </header>
 
@@ -40,12 +40,25 @@
             </div>
         </section>
 
-        <section class="metodos-pagamento">
+      <section class="metodos-pagamento">
             <p class="titulo-pagamento">Método de Pagamento</p>
             <div class="area-botoes">
                 <button type="button" class="check_button" name="set_pg" onclick="set_medodo_pagamento(this.id)" id="Pix">Pix</button>
                 <button type="button" class="check_button" name="set_pg" onclick="set_medodo_pagamento(this.id)" id="Dinheiro">Dinheiro</button>
                 <button type="button" class="check_button" name="set_pg" onclick="set_medodo_pagamento(this.id)" id="Cartão">Cartão</button>  
+            </div>
+
+            <div id="area-parcelas" style="display: none; margin-top: 15px;">
+                <label for="qtd-parcelas">Número de Parcelas:</label>
+                <select id="qtd-parcelas" class="select-envio" onchange="calcularValores()">
+                    <option value="1">1x sem juros</option>
+                    <option value="2">2x sem juros</option>
+                    <option value="3">3x sem juros</option>
+                    <option value="4">4x sem juros</option>
+                    <option value="5">5x sem juros</option>
+                    <option value="6">6x sem juros</option>
+                </select>
+                <p id="info-parcela" style="margin-top: 10px; font-weight: bold; text-align: center; color: #4a7c59;"></p>
             </div>
         </section>
 
