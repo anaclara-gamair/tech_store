@@ -59,4 +59,16 @@ function atualizarCarrinho() {
 
     totalSpan.innerText = total.toFixed(2)
     contador.innerText = carrinho.length
+
+    localStorage.setItem('td',total.toFixed(2))
+}
+
+function Pg_open(){
+    const total  = localStorage.getItem('td')
+    if (total){
+        if (total>0){
+            window.location.href="pagamento.html"
+        }
+    }
+
 }

@@ -1,0 +1,246 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #d4f8e8, #fce1e4, #fff3b0);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a7c59;
+}
+
+
+/* Container Principal */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Cabeçalho */
+.cabecalho-empresa {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #a3d9a5;
+}
+
+.cabecalho-empresa h2 {
+    color: #4a7c59;
+}
+
+.cabecalho-empresa p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Detalhes do Pedido */
+.detalhes-pedido {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.linha-valor {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Select de Envio */
+.select-envio {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #a3d9a5;
+    outline: none;
+    font-size: 15px;
+    background-color: #fff;
+    color: #4a7c59;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.select-envio:focus {
+    border-color: #ffb7c5;
+    box-shadow: 0 0 8px rgba(255, 183, 197, 0.5);
+}
+
+/* Botões */
+.titulo-pagamento {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.area-botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.check_button {
+    flex: 1;
+    height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #8fd694;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.check_button:hover {
+    transform: scale(1.05); 
+    background-color: #7bc480;
+}
+
+
+/* Rodapé Total */
+.rodape-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 2px dashed #a3d9a5;
+    font-size: 18px;
+    font-weight: 800;
+    background-color: #f0fff4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* =========================================
+   CARD (MODAL)
+   ========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.ativo {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.ativo .modal-card {
+    transform: translateY(0);
+}
+
+.icone-sucesso {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.btn-fechar {
+    background-color: #ffb7c5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: 0.2s;
+}
+
+.btn-fechar:hover {
+    background-color: #fc99ab;
+}
+.rodape {
+    display: flex;
+    flex-direction: column;
+}
+
+.rodape input {
+    /* Removi o display: flex daqui */
+    display: block; 
+    align-self: center;
+    margin-top: 15px;
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    color: #8fd694;
+    border-radius: 10px;
+    border-color: #fce1e4;; /* Corrigi para adicionar a borda corretamente */
+    background-color: transparent; /* Garante que o fundo não atrapalhe */
+    cursor: pointer;
+    
+   
+    transition: all 0.3s ease; 
+}
+
+.rodape input:hover {
+    transform: scale(1.05) translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+    z-index: 10;
+}
+/* =========================================
+   CONFETES (ANIMAÇÃO)
+   ========================================= */
+.confete {
+    position: fixed;
+    top: -10px; /* Começa um pouco acima da tela */
+    width: 10px;
+    height: 10px;
+    z-index: 2000; /* Fica acima do modal */
+    border-radius: 2px;
+    animation: cair forwards; /* A duração será definida no JS */
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg); /* Cai até o fim da tela girando */
+        opacity: 0;
+    }
+}

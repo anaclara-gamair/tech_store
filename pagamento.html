@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylePg.css">
+    <title>Faturamento | Pagamento</title>
+    <script src="pagamento.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+            const td = localStorage.getItem('td') || "0.00"; 
+            const spanSubtotal = document.getElementById('valor-subtotal');
+            spanSubtotal.textContent = `R$ ${parseFloat(td).toFixed(2).replace('.', ',')}`;
+            spanSubtotal.setAttribute('data-valor', td.toFixed(2));
+        });
+    </script>
+</head>
+<body>
+    <main class="container">
+        <header class="cabecalho-empresa">
+            <h2>Nome da Empresa</h2>
+            <p>Resumo do Pedido</p>
+        </header>
+
+        <section class="detalhes-pedido">
+            <div class="linha-valor">
+                <label>Subtotal:</label>
+                <span id="valor-subtotal" data-valor="00.00">R$ 00,00</span>
+            </div>
+
+            <div class="form-envio">
+                <label for="opcoes-envio">Forma de Envio:</label>
+                <select id="opcoes-envio" class="select-envio">
+                    <option value="0" disabled selected>Selecione uma opção...</option>
+                    <option value="30.00">Entrega Express - R$ 30,00</option>
+                    <option value="15.00">Entrega Normal - R$ 15,00</option>
+                    <option value="0.00">Retirada na Loja - Grátis</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="metodos-pagamento">
+            <p class="titulo-pagamento">Método de Pagamento</p>
+            <div class="area-botoes">
+                <button type="button" class="check_button" name="set_pg" onclick="set_medodo_pagamento(this.id)" id="Pix">Pix</button>
+                <button type="button" class="check_button" name="set_pg" onclick="set_medodo_pagamento(this.id)" id="Dinheiro">Dinheiro</button>
+                <button type="button" class="check_button" name="set_pg" onclick="set_medodo_pagamento(this.id)" id="Cartão">Cartão</button>  
+            </div>
+        </section>
+
+
+        <footer class="rodape">
+           <div class="rodape-total">
+            <label>Valor Total:</label>
+            <span id="valor-total">R$ 0,00</span>
+            </diV>
+            <input id = "finalizar-compra" type="button" onclick="finalizar_compra()" value="Finalizar Compra">
+        </footer>
+        
+        
+    </main>
+
+    <div id="modal-sucesso" class="modal-overlay">
+        <div class="modal-card">
+            <div class="icone-sucesso">✅</div>
+            <h3>Pagamento Confirmado!</h3>
+            <p>Você escolheu pagar via: <strong id="metodo-escolhido"></strong></p>
+            <button class="btn-fechar" onclick="fecharModal()">Fechar</button>
+        </div>
+    </div>
+</body>
+</html>
