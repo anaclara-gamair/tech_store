@@ -44,7 +44,7 @@ O projeto foi construído utilizando as seguintes tecnologias e ferramentas:
 Desenvolvido com muita dedicação por:
 
 * **Ana Gamair** - [GitHub da Ana](https://github.com/anaclara-gamair)
-* **Gabriel Henrique** - [GitHub do Gabriel](https://github.com/malusghs)
+* **Gabriel Henrique** - [GitHub do Gabriel](https://github.com/malosghs)
 
 ---
 
