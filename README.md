@@ -9,7 +9,8 @@ Um sistema de vendas online completo para e-commerce, desenvolvido com foco em o
 
 ## 📸 Projeto
 
-![Banner da Tech Store](./IMG/2.jpg)
+<img width="1919" height="902" alt="image" src="https://github.com/user-attachments/assets/38b2165b-5e7b-46f9-ab96-716918f6091d" />
+
 
 ---
 
@@ -29,7 +30,7 @@ Um sistema de vendas online completo para e-commerce, desenvolvido com foco em o
 O projeto foi construído utilizando as seguintes tecnologias e ferramentas:
 
 * **HTML5:** Estruturação semântica das páginas.
-* **CSS3:** Estilização customizada, incluindo backgrounds em gradiente, animações, transições suaves (hover) e modais personalizados.
+* **CSS:** Estilização customizada, incluindo backgrounds em gradiente, animações, transições suaves (hover) e modais personalizados.
 * **JavaScript (Vanilla):** Manipulação da DOM, regras de negócio do carrinho de compras e requisições assíncronas (Fetch API).
 * **Bootstrap 5:** Framework utilizado para responsividade (grids), navegação e componentes visuais rápidos.
 * **Bootstrap Icons:** Biblioteca para os ícones utilizados na interface.
