@@ -1,0 +1,53 @@
+/* Este é o container que vai abraçar os 3 cartões */
+.pricing-container {
+    display: flex;
+    justify-content: center; /* Centraliza os cartões na tela */
+    align-items: stretch; /* Mágica: faz todos os cartões esticarem para ter a mesma altura! */
+    gap: 24px; /* Dá um espaço entre um cartão e outro */
+    padding: 40px;
+}
+/* Animações e Estilos dos Botões */
+.btn-plano {
+    transition: all 0.3s ease; /* Deixa a animação suave */
+    font-weight: 600;
+    border-radius: 50px; /* Botão arredondado */
+    padding: 12px 20px;
+    width: 100%; /* Ocupa toda a largura do cartão */
+}
+
+/* Botão Básico */
+.btn-basico {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 2px solid #e0e0e0;
+}
+.btn-basico:hover {
+    background-color: #e2e6ea;
+    transform: translateY(-4px); /* Faz o botão subir */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Cria a sombra */
+}
+
+/* Botão Premium */
+.btn-premium {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+}
+.btn-premium:hover {
+    background-color: #e0a800;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Botão Black */
+.btn-black {
+    background-color: #212529;
+    color: #fff;
+    border: none;
+}
+.btn-black:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
