@@ -6,7 +6,8 @@ Um sistema de vendas online completo para e-commerce, desenvolvido com foco em o
 
 * **Acesso ao site:** [Deploy na Vercel](https://techstoreana.vercel.app/) | [Deploy no GitHub Pages](https://anaclara-gamair.github.io/tech_store/)
 * **Repositório:** [Ver código fonte no GitHub](https://github.com/anaclara-gamair/tech_store/)
-## Projeto
+
+## 📸 Projeto
 
 ![Banner da Tech Store](./IMG/2.jpg)
 
@@ -51,4 +52,4 @@ Desenvolvido com muita dedicação por:
 
 1. Faça o clone deste repositório na sua máquina:
    ```bash
-   git clone [https://github.com/anaclara-gamair/tech_store.git](https://github.com/anaclara-gamair/tech_store.git)
+   git clone https://github.com/anaclara-gamair/tech_store.git
