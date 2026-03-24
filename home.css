@@ -257,7 +257,7 @@
 }
 
 /* ================= FOOTER ================= */
-.carrinho-footer {
+.carrinho-footer {.
   border-top: 2px solid #fce1e4;
   padding-top: 10px;
   margin-top: 10px;
@@ -278,7 +278,7 @@ body {
   background: linear-gradient(135deg, #d4f8e8, white, white, #d4f8e8);
   padding-top: 160px;
 }
-/*=====================about==========================*/
+
 .aboutimg {
   margin: 0% auto;
   width: 100%;

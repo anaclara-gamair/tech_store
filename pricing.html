@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="pricing.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function assinarPlano(event) {
+        // Evita que a página recarregue ao clicar no link
+        event.preventDefault(); 
+
+        // 1. Dispara a chuva de confetes para dar uma sensação boa!
+        confetti({
+            particleCount: 150,
+            spread: 90,
+            origin: { y: 0.6 },
+            colors: ['#ffc107', '#000000', '#28a745', '#007bff']
+        });
+        
+        // 2. Mostra o Popup Bonito (com um pequeno atraso para curtir o confete)
+        setTimeout(() => {
+            Swal.fire({
+                title: 'Novidade a caminho! 🚀',
+                text: 'Esse serviço está indisponível no momento. Futuramente realizaremos a implementação e você será notificado!',
+                icon: 'info', // Mostra um ícone de informação
+                confirmButtonText: 'Entendi',
+                confirmButtonColor: '#212529', // Cor do botão combinando com o tema
+                background: '#fff',
+                borderRadius: '15px' // Deixa a janelinha arredondada igual aos cards
+            });
+        }, 800); // 800 milissegundos de espera
+    }
+</script>
+<body>
+        <!--
+    ============================================================================
+                                    HEADER PEQUENO GRADIENTE
+    ==========================================================================
+    -->
+    <div class="headeramarelo">
+        <p>Aproveite as promoções da semana do consumidor!</p>
+      </div>
+  
+      <!--
+      ============================================================================
+                                      HEADER GRANDE INICIAL
+      ==========================================================================
+      -->
+     <header class="p-3 header-pet">
+  <div class="container position-relative">
+
+    <!-- LINHA DE CIMA -->
+    <div class="d-flex justify-content-end mb-4">
+      <div class="d-flex align-items-center gap-3">
+
+        <input type="search" class="form-control search-bar" placeholder="Search...">
+
+        <!-- CARRINHO -->
+        <button class="cart-icon" id="abrir-carrinho">
+          <i class="bi bi-cart3"></i>
+          <span id="contador">0</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- LOGO CENTRAL -->
+    <div class="logo-centro text-center">
+      <img src="img/logotech.png" class="logo-central-img" alt="Logo tech store">
+    </div>
+
+    <!-- MENU DE BAIXO -->
+    <ul class="nav justify-content-center mt-4">
+
+      <li class="nav-item">
+        <a class="nav-link" href="home.html">
+          <i class="bi bi-house-door-fill"></i> Home
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="contactus.html">
+          <i class="bi bi-stars"></i> Contact us
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="pricing.html">
+          <i class="bi bi-tag-fill"></i> Pricing
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="faqs.html">
+          <i class="bi bi-question-circle-fill"></i> FAQs
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">
+          <i class="bi bi-info-circle-fill"></i> About
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+</header>
+
+
+    <!-- ======================================================
+                CARDS COM  DUVIDAS FREQUENCIAS 
+-->
+                <section class="py-5">
+<div class="container">
+
+    <h2 class="headertexto2 text-center mb-5">Escolha seu plano</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+    <div class="col">
+        <div class="card card-pricing shadow-sm border-0 rounded-4 h-100 p-3">
+        <div class="card-body d-flex flex-column text-center">
+
+            <h4 class="cardstexto fw-bold">Básico</h4>
+            <i class="bi bi-box mt-3 mb-2" style="font-size: 80px; color: #6c757d;"></i>
+            
+            <h2 class="fw-bold mb-4">Grátis</h2>
+            
+            <ul class="list-unstyled d-inline-flex flex-column text-start align-self-center mt-3 mb-4">
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5 flex-shrink-0"></i> 
+                    <span><strong>2 Fretes Grátis</strong> para começar</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5 flex-shrink-0"></i> 
+                    <span><strong>10% de desconto</strong> em 5 pedidos</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-success me-3 fs-5 flex-shrink-0"></i> 
+                    <span>Rastreio padrão de encomendas</span>
+                </li>
+            </ul>
+
+            <div class="mt-auto">
+                <a href="#" class="btn btn-plano btn-basico" onclick="assinarPlano(event)">Iniciar Plano</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card card-pricing shadow border-warning rounded-4 h-100 p-3" style="border-width: 2px;">
+        <div class="card-body d-flex flex-column text-center">
+
+            <h4 class="cardstexto fw-bold">Premium</h4>
+            <i class="bi bi-star-fill mt-3 mb-2" style="font-size: 80px; color: #ffc107;"></i>
+            
+            <h2 class="fw-bold mb-4">R$ 29<small class="text-muted fs-6">/mês</small></h2>
+            
+            <ul class="list-unstyled d-inline-flex flex-column text-start align-self-center mt-3 mb-4">
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-warning me-3 fs-5 flex-shrink-0"></i> 
+                    <span><strong>5 Fretes Grátis</strong> por mês</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-warning me-3 fs-5 flex-shrink-0"></i> 
+                    <span><strong>27% de desconto</strong> fixo em fretes</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-warning me-3 fs-5 flex-shrink-0"></i> 
+                    <span>Envio com prioridade (fura-fila)</span>
+                </li>
+            </ul>
+
+            <div class="mt-auto">
+                <a href="#" class="btn btn-plano btn-premium" onclick="assinarPlano(event)">Iniciar Premium</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card card-pricing shadow-lg rounded-4 h-100 p-3 bg-light" style="border: 4px solid #000;">
+        <div class="card-body d-flex flex-column text-center">
+
+            <h4 class="cardstexto fw-bold">Black</h4>
+            <i class="bi bi-gem mt-3 mb-2" style="font-size: 80px; color: #000000;"></i>
+            
+            <h2 class="fw-bold mb-4">R$ 79<small class="text-muted fs-6">/mês</small></h2>
+            
+            <ul class="list-unstyled d-inline-flex flex-column text-start align-self-center mt-3 mb-4">
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-dark me-3 fs-5 flex-shrink-0"></i> 
+                    <span><strong>Frete Grátis Ilimitado</strong></span>
+                </li>
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-dark me-3 fs-5 flex-shrink-0"></i> 
+                    <span><strong>50% de desconto</strong> nos expressos</span>
+                </li>
+                <li class="mb-3 d-flex align-items-center">
+                    <i class="bi bi-check-circle-fill text-dark me-3 fs-5 flex-shrink-0"></i> 
+                    <span>Brinde surpresa a cada 10 compras</span>
+                </li>
+            </ul>
+
+            <div class="mt-auto">
+                <a href="#" class="btn btn-plano btn-black" onclick="assinarPlano(event)">Assinar Black</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+</section>
+   <!-- ======================== CARRINHO ====================== -->
+
+    <div id="overlay"></div>  
+
+    <div id="carrinho-lateral">
+
+        <div class="carrinho-header">
+            <h5>Seu Carrinho</h5>
+            <button id="fechar-carrinho">✖</button>
+        </div>
+
+        <div id="lista-carrinho"></div>
+
+        <div class="carrinho-footer">
+            <strong>Total: R$ <span id="total">0.00</span></strong>
+        </div>
+
+        <button class="btn-primary">Pagar</button>
+
+    </div>
+
+    
+    <script src="carrinho.js"></script>
+
+</body>
+</html>
